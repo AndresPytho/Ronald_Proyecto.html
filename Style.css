@@ -118,14 +118,25 @@ main {
     background-image: url("imagenes/FIFA-18.jpg");
 }
 
-.interactividad {
-    background-image: url("imagenes/detroit-become-human-2019112015234524_1.jpg");
+.aventura {
+    background-image: url("imagenes/Mario-bross.jpg");
 }
 
 .carreras {
     background-image: url("imagenes/item-Carreras.webp");
 }
 
+.disparos{
+    background-image: url("imagenes/Call-of-duty.png");
+}
+
+.Acción{
+    background-image: url("imagenes/GTA.jpg");
+}
+
+.batalla{
+    background-image: url("imagenes/mortal-kombat.jpg");
+}
 footer {
     text-align: center;
     padding: 40px 20px;
