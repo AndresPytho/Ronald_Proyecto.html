@@ -137,6 +137,13 @@ main {
 .batalla{
     background-image: url("imagenes/mortal-kombat.jpg");
 }
+.Construcción{
+    background-image: url("imagenes/Minecraft.png");
+}
+
+.Pelea{
+    background-image: url("imagenes/street-fighter.webp");
+}
 footer {
     text-align: center;
     padding: 40px 20px;
