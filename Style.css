@@ -1,52 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;  /* Elimina el margen y el padding predeterminados de todos los elementos */
+    box-sizing: border-box;  /* Asegura que el padding y el border se incluyan en el tamaño total de los elementos*/
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    min-height: 100vh;
+    font-family: 'Roboto', sans-serif; 
+    min-height: 100vh;  /*Asegura que el cuerpo ocupe al menos toda la altura de la ventana*/
     color: #fff;
-    animation: fondoColor 20s ease-in-out infinite;
-    overflow-x: hidden;
+    animation: fondoColor 20s ease-in-out infinite;  /* Animación de fondo con degradado*/
+    overflow-x: hidden;  /* Evita el scroll horizontal causado por transformaciones en las tarjetas */
 }
 
 @keyframes fondoColor {
     0% {
-        background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+        background: linear-gradient(135deg, #0f0f0f, #1a1a2e);  /* Degradado inicial oscuro */
     }
     33% {
-        background: linear-gradient(135deg, #0f2027, #203a43);
+        background: linear-gradient(135deg, #0f2027, #203a43); /* Degradado intermedio con tonos azules */
     }
     66% {
-        background: linear-gradient(135deg, #141e30, #243b55);
+        background: linear-gradient(135deg, #141e30, #243b55); /* Degradado intermedio con tonos más oscuros */
     }
     100% {
-        background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+        background: linear-gradient(135deg, #0f0f0f, #1a1a2e); /* Vuelve al degradado inicial oscuro */
     }
 }
 
 header {
-    text-align: center;
-    padding: 60px 20px 40px;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    animation: slideDown 0.8s ease-out;
+    text-align: center;    /* Centra el texto del encabezado */
+    padding: 60px 20px 40px;   /* Espaciado superior e inferior del encabezado */
+    background: rgba(0, 0, 0, 0.3);  /* Fondo semitransparente para resaltar el texto */
+    backdrop-filter: blur(10px);  /* Efecto de desenfoque para el fondo del encabezado */
+    animation: slideDown 0.8s ease-out;  /* Animación de entrada para el encabezado */
 }
 
-@keyframes slideDown {
+@keyframes slideDown {  /* Animación para hacer que el encabezado aparezca desde arriba con un efecto de desvanecimiento */
     from {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-50px); /* Comienza 50px por encima de su posición final */
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0); /* Termina en su posición final */
     }
 }
 
-header h1 {
+header h1 {  /* Estilos para el título del encabezado */
     font-size: 2.8rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -60,7 +60,7 @@ header h1 {
     animation: gradientShift 3s ease-in-out infinite;
 }
 
-@keyframes gradientShift {
+@keyframes gradientShift { /* Animación para hacer que el degradado del texto se mueva de izquierda a derecha */
     0%, 100% {
         background-position: 0% center;
     }
@@ -69,8 +69,8 @@ header h1 {
     }
 }
 
-/* ===== ASIDE debajo del título ===== */
-.aside-info {
+
+.aside-info { /* Estilos para el bloque de información al lado del encabezado */
     margin-top: 18px;
     display: inline-block;
     max-width: 700px;
@@ -82,7 +82,7 @@ header h1 {
     animation: fondoinfito 20s ease-in-out infinite;
 }
 
-@keyframes fondoinfito {
+@keyframes fondoinfito { /* Animación para cambiar el fondo del bloque de información entre varios colores */
     0% {
         background: rgba(220, 6, 24, 0.07);
     }
@@ -94,7 +94,7 @@ header h1 {
     }
 }
 
-.aside-info p {
+.aside-info p {  /* Estilos para el texto dentro del bloque de información */
     font-size: 0.95rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.7);
@@ -105,7 +105,7 @@ main {
     padding: 40px 20px;
 }
 
-.contenedor {
+.contenedor {  /* Estilos para el contenedor de las tarjetas, utilizando CSS Grid para organizar las tarjetas en filas y columnas */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
@@ -114,7 +114,7 @@ main {
     padding: 20px;
 }
 
-.card {
+.card {  /* Estilos para cada tarjeta individual */
     background: rgba(255, 255, 255, 0.03);
     border-radius: 20px;
     overflow: hidden;
@@ -127,7 +127,7 @@ main {
     z-index: 1;
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInUp {  /* Animación para hacer que las tarjetas aparezcan desde abajo con un efecto de desvanecimiento */
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -138,8 +138,9 @@ main {
     }
 }
 
-/* Delay para cada card */
-.card:nth-child(1) { animation-delay: 0.1s; }
+/* Agrega un retraso incremental a cada tarjeta para crear un efecto de aparición escalonada */
+
+.card:nth-child(1) { animation-delay: 0.1s; }  
 .card:nth-child(2) { animation-delay: 0.2s; }
 .card:nth-child(3) { animation-delay: 0.3s; }
 .card:nth-child(4) { animation-delay: 0.4s; }
@@ -151,6 +152,7 @@ main {
 .card:nth-child(10) { animation-delay: 1s; }
 .card:nth-child(11) { animation-delay: 1.1s; }
 
+/* Efecto de hover para las tarjetas, haciendo que se eleven ligeramente, aumenten de tamaño y tengan un brillo más intenso */
 .card:hover {
     transform: translateY(-15px) scale(1.05);
     box-shadow: 0 25px 50px rgba(0, 212, 255, 0.3),
@@ -159,6 +161,7 @@ main {
     z-index: 100;
 }
 
+/* Efecto de click para las tarjetas, haciendo que se expandan y tengan un brillo intenso, mientras que las demás tarjetas se desenfocan y se vuelven más pequeñas */
 @keyframes expandCard {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -180,6 +183,7 @@ main {
     animation: titleGlow 1s ease-in-out infinite;
 }
 
+/* Animación para hacer que el título de la tarjeta tenga un efecto de brillo pulsante al hacer clic */
 @keyframes titleGlow {
     0%, 100% {
         text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
@@ -189,35 +193,35 @@ main {
         0 0 60px rgba(123, 47, 247, 0.6);
     }
 }
-
+/* Efecto de expansión para la descripción y la imagen al hacer clic en la tarjeta */
 .card:active .descripcion {
     font-size: 1.1rem;
     padding: 0 30px 30px;
     line-height: 1.8;
 }
-
+/* Efecto de expansión para la imagen al hacer clic en la tarjeta, con un brillo intenso */
 .card:active .item {
     height: 350px;
     transform: scale(1) rotate(0deg) !important;
     filter: brightness(1.1);
 }
-
+/* Efecto para desenfocar y reducir el tamaño de las demás tarjetas mientras una tarjeta está activa */
 .card:active ~ .card {
     filter: blur(3px);
     opacity: 0.3;
     transform: scale(0.9);
 }
-
+/* Efecto para hacer que las tarjetas adyacentes se desplacen ligeramente al hacer hover en una tarjeta */
 .card:hover + .card {
     transform: translateX(20px);
     transition: transform 0.4s ease;
 }
-
+/* Efecto para hacer que las tarjetas adyacentes se desplacen ligeramente en la dirección opuesta al hacer hover en una tarjeta */
 .card:has(+ .card:hover) {
     transform: translateX(-20px);
     transition: transform 0.4s ease;
 }
-
+/* Efecto para hacer que las tarjetas adyacentes se desplacen ligeramente al hacer hover en una tarjeta, con diferentes desplazamientos según la posición de la tarjeta */
 @media (min-width: 1025px) {
     .card:nth-child(3n+1):hover ~ .card:nth-child(3n+2),
     .card:nth-child(3n+2):hover ~ .card:nth-child(3n+3) {
@@ -228,7 +232,7 @@ main {
         transform: translateX(-15px);
     }
 }
-
+/* Efecto para hacer que las tarjetas adyacentes se desplacen ligeramente al hacer hover en una tarjeta, con diferentes desplazamientos según la posición de la tarjeta, para pantallas medianas */
 @media (min-width: 769px) and (max-width: 1024px) {
     .card:nth-child(2n+1):hover + .card:nth-child(2n+2) {
         transform: translateX(20px);
@@ -238,7 +242,7 @@ main {
         transform: translateY(-15px) scale(1.05) translateX(-20px) !important;
     }
 }
-
+/* Efecto de pulso para la imagen al hacer clic en la tarjeta, creando un brillo que se expande desde el centro de la imagen */
 @keyframes pulse {
     0%, 100% {
         box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
@@ -247,7 +251,7 @@ main {
         box-shadow: 0 0 0 30px rgba(0, 212, 255, 0);
     }
 }
-
+/* Efecto de pulso para la imagen al hacer clic en la tarjeta, creando un brillo que se expande desde el centro de la imagen */
 .item {
     width: 100%;
     height: 280px;
@@ -258,7 +262,7 @@ main {
     overflow: hidden;
     transition: all 0.6s ease;
 }
-
+/* Efecto de brillo para la imagen al hacer hover en la tarjeta, con un degradado que se superpone a la imagen */
 .item::after {
     content: '';
     position: absolute;
@@ -269,7 +273,7 @@ main {
     background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
     transition: opacity 0.3s ease;
 }
-
+/* Efecto de brillo para la imagen al hacer hover en la tarjeta, con un degradado que se superpone a la imagen */
 .item::before {
     content: '';
     position: absolute;
@@ -286,7 +290,7 @@ main {
     transform: rotate(45deg);
     transition: all 0.6s ease;
 }
-
+/* Efecto de brillo para la imagen al hacer hover en la tarjeta, con un degradado que se superpone a la imagen, y un ligero aumento de tamaño y rotación */
 .card:hover .item {
     transform: scale(1.15) rotate(-2deg);
 }
@@ -309,7 +313,7 @@ main {
     );
     animation: shine 1.5s ease-in-out infinite;
 }
-
+/* Animación para hacer que el brillo se desplace a través de la imagen al hacer clic en la tarjeta */
 @keyframes shine {
     0% {
         left: -100%;
@@ -318,7 +322,7 @@ main {
         left: 200%;
     }
 }
-
+/* Estilos para el título y la descripción dentro de cada tarjeta, con efectos de transición para hacer que cambien de color y se desplacen ligeramente al hacer hover en la tarjeta */
 .card h3 {
     padding: 20px 20px 10px;
     font-size: 1.5rem;
@@ -329,13 +333,13 @@ main {
     z-index: 2;
     transition: all 0.3s ease;
 }
-
+/* Efecto para hacer que el título cambie de color, se desplace ligeramente y tenga un brillo al hacer hover en la tarjeta */
 .card:hover h3 {
     color: #00d4ff;
     transform: translateX(10px);
     text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
-
+/* Estilos para la descripción dentro de cada tarjeta, con efectos de transición para hacer que cambien de color y se desplacen ligeramente al hacer hover en la tarjeta */
 .descripcion {
     padding: 0 20px 20px;
     font-size: 0.95rem;
@@ -346,7 +350,7 @@ main {
     z-index: 2;
     transition: all 0.3s ease;
 }
-
+/* Efecto para hacer que la descripción cambie de color y se desplace ligeramente al hacer hover en la tarjeta */
 .card:hover .descripcion {
     color: rgba(255, 255, 255, 0.9);
     transform: translateX(5px);
@@ -397,6 +401,7 @@ main {
     background-image: url("imagenes/street-fighter.webp");
 }
 
+/* Estilos para el pie de página, con un fondo semitransparente y un borde superior sutil, además de una animación de aparición */
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -405,7 +410,7 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     animation: fadeIn 1s ease-out 1.2s backwards;
 }
-
+/* Animación para hacer que el pie de página aparezca con un efecto de desvanecimiento */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -414,7 +419,7 @@ footer {
         opacity: 1;
     }
 }
-
+/* Estilos para el texto dentro del pie de página, con un color más claro y un tamaño de fuente más pequeño para diferenciarlo del contenido principal */
 footer p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
@@ -422,7 +427,7 @@ footer p {
     font-weight: 300;
 }
 
-/* Responsive */
+/* Media Queries para hacer que el diseño sea responsive, ajustando el tamaño del título, el bloque de información, la disposición de las tarjetas y los efectos de hover y click según el tamaño de la pantalla */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -455,7 +460,7 @@ footer p {
         height: 250px;
     }
 }
-
+/* Media Query para pantallas medianas, ajustando la disposición de las tarjetas a dos columnas y el efecto de click para expandir la tarjeta a un tamaño específico */
 @media (min-width: 769px) and (max-width: 1024px) {
     .contenedor {
         grid-template-columns: repeat(2, 1fr);
@@ -465,7 +470,7 @@ footer p {
         width: 550px;
     }
 }
-
+/* Media Query para pantallas grandes, ajustando la disposición de las tarjetas a tres columnas */
 @media (min-width: 1025px) {
     .contenedor {
         grid-template-columns: repeat(3, 1fr);
