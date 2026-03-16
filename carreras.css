@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    color: #fff;
+    animation: fondoColor 20s ease-in-out infinite;
+    overflow-x: hidden;
+}
+@keyframes fondoColor{
+    0%{
+        background: linear-gradient(135deg,#333131, #1a1a2e);
+    }
+    33%{
+        background: linear-gradient(135deg, #0f2027, #203a43);
+    }
+    66%{
+        background: linear-gradient(135deg, #141e30, #243b55);
+    }
+    100%{
+        background: linear-gradient(135deg, #3a3838, #1a1a2e);
+    }
+}
+
+header{
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: rgba(0, 0,0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.8s ease-out;
+}
+@keyframes slideDown{
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main{
+    padding: 40px 20px;
+}
+
+h2{
+  font-size: 50px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgb(128, 136, 13),rgb(153, 152, 132),rgb(114, 111, 111));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift{
+    0%,100%{
+        background-position: 0% center;
+    }
+    50%{
+        background-position: 100% center;
+    }
+}
+
+
+.contenedor{
+ width: 1300px;
+ margin: auto;
+ padding: 20px;
+}
+
+
+.descripcion{ /*Se establece un tamaño de letra definina, espacio entre palabras y linea de palabras*/
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.descrip{ /*comentario despues de descripcion */
+    font-size: 20px;
+    margin-bottom: 5px;
+    line-height: normal;
+}
+
+.Video{
+    width: 800px;
+    height: 450px;
+    display: block;
+    margin: auto;
+}
+
+
+.regresar{
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease-out 1.2s backwards;
+}
+/* Animación para hacer que el pie de página aparezca con un efecto de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Estilos para el texto dentro del pie de página, con un color más claro y un tamaño de fuente más pequeño para diferenciarlo del contenido principal */
+footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 5px 0;
+    font-weight: 300;
+}
